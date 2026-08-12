@@ -1,0 +1,55 @@
+dataset: bdd100k
+num_subsets: 20
+mapping_fraction: 0.15
+validation_ratio: 0.20
+z_dim: 256
+bsna:
+  lambda_sparse: 0.0001
+  lambda_map: 0.01
+  lambda_div: 0.005
+  lambda_budget: 0.005
+  sparse_warmup_epochs: 20
+  target_ratios:
+    shallow: 0.15
+    middle: 0.08
+    deep: 0.04
+    head: 0.10
+models:
+  resnet50:
+    optimizer: sgd
+    learning_rate: 0.01
+    momentum: 0.9
+    weight_decay: 0.0001
+    batch_size: 128
+    epochs: 100
+  densenet121:
+    optimizer: sgd
+    learning_rate: 0.01
+    momentum: 0.9
+    weight_decay: 0.0001
+    batch_size: 128
+    epochs: 100
+  efficientnet_b0:
+    optimizer: adamw
+    learning_rate: 0.0005
+    weight_decay: 0.05
+    batch_size: 128
+    epochs: 100
+  convnext_t:
+    optimizer: adamw
+    learning_rate: 0.0005
+    weight_decay: 0.05
+    batch_size: 128
+    epochs: 100
+  vit_b16:
+    optimizer: adamw
+    learning_rate: 0.0005
+    weight_decay: 0.05
+    batch_size: 128
+    epochs: 100
+  swin_t:
+    optimizer: adamw
+    learning_rate: 0.0005
+    weight_decay: 0.05
+    batch_size: 128
+    epochs: 100

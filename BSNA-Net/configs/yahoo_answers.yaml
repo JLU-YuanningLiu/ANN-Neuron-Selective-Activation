@@ -1,0 +1,65 @@
+dataset: yahoo_answers
+num_classes: 10
+num_subsets: 20
+mapping_fraction: 0.15
+validation_ratio: 0.10
+max_length: 256
+vocab_size: 50000
+z_dim: 256
+bsna:
+  lambda_sparse: 0.00005
+  lambda_map: 0.01
+  lambda_div: 0.005
+  lambda_budget: 0.01
+  warmup_ratio: 0.10
+  target_ratios:
+    shallow: 0.20
+    middle: 0.10
+    deep: 0.05
+    head: 0.12
+models:
+  fasttext:
+    embedding_dim: 300
+    optimizer: adam
+    learning_rate: 0.001
+    batch_size: 512
+    epochs: 30
+  textcnn:
+    embedding_dim: 300
+    kernels: [3, 4, 5]
+    channels: 128
+    dropout: 0.5
+    optimizer: adam
+    learning_rate: 0.001
+    batch_size: 256
+    epochs: 30
+  bilstm:
+    embedding_dim: 300
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.5
+    optimizer: adam
+    learning_rate: 0.0005
+    batch_size: 128
+    epochs: 40
+  bert_base:
+    optimizer: adamw
+    learning_rate: 0.00002
+    weight_decay: 0.01
+    batch_size: 32
+    epochs: 10
+    warmup_ratio: 0.10
+  roberta_base:
+    optimizer: adamw
+    learning_rate: 0.00002
+    weight_decay: 0.01
+    batch_size: 32
+    epochs: 10
+    warmup_ratio: 0.10
+  deberta_base:
+    optimizer: adamw
+    learning_rate: 0.00002
+    weight_decay: 0.01
+    batch_size: 32
+    epochs: 10
+    warmup_ratio: 0.10

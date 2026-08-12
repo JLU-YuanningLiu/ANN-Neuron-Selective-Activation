@@ -1,0 +1,63 @@
+dataset: imagenet
+num_classes: 1000
+num_subsets: 100
+mapping_fraction: 0.15
+z_dim: 256
+bsna:
+  lambda_sparse: 0.0001
+  lambda_map: 0.01
+  lambda_div: 0.005
+  lambda_budget: 0.005
+  sparse_warmup_epochs: 20
+  target_ratios:
+    shallow: 0.15
+    middle: 0.08
+    deep: 0.04
+    head: 0.10
+models:
+  resnet50:
+    optimizer: adamw
+    learning_rate: 0.001
+    weight_decay: 0.05
+    batch_size: 256
+    epochs: 300
+    warmup_epochs: 10
+  densenet121:
+    optimizer: adamw
+    learning_rate: 0.001
+    weight_decay: 0.05
+    batch_size: 256
+    epochs: 300
+    warmup_epochs: 10
+  efficientnet_b0:
+    optimizer: adamw
+    learning_rate: 0.001
+    weight_decay: 0.05
+    batch_size: 256
+    epochs: 300
+    warmup_epochs: 10
+  convnext_t:
+    optimizer: adamw
+    learning_rate: 0.001
+    weight_decay: 0.05
+    batch_size: 256
+    epochs: 300
+    warmup_epochs: 10
+    drop_path: 0.1
+  vit_b16:
+    optimizer: adamw
+    learning_rate: 0.0005
+    weight_decay: 0.05
+    batch_size: 256
+    epochs: 300
+    warmup_epochs: 20
+    drop_path: 0.1
+  swin_t:
+    optimizer: adamw
+    learning_rate: 0.0005
+    weight_decay: 0.05
+    batch_size: 256
+    epochs: 300
+    warmup_epochs: 20
+    drop_path: 0.1
+label_smoothing: 0.1
