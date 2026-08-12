@@ -119,8 +119,8 @@ Install the required Python packages:
 pip install -r requirements.txt
 ```
 
-The experiments were conducted using Python 3.10 and PyTorch 2.x with
-CUDA support.
+The experiments were conducted using Python 3.8.8 and PyTorch 2.4.1+cu121
+with CUDA support.
 
 ------------------------------------------------------------------------
 
